@@ -12,19 +12,19 @@ Video Processing Service 是一个用于自动化视频处理的服务，支持�
 
 项目结构
 
-video_processing_service/
-├── config/
-│   └── paths.py                # 配置文件，定义文件路径和目录
-├── src/
-│   └── video_processing.py     # 主要的视频处理逻辑
-├── uploads/                    # 上传的视频文件存储目录
-├── outputs/                    # 处理后的文件输出目录
-│   ├── audio/                  # 提取的音频文件
-│   ├── subtitles/              # 生成的字幕文件
-│   ├── frames/                 # 视频帧
-├── app.py                       # Flask API 服务入口
-└── requirements.txt            # 项目的依赖列表
-
+video_processing_service/  
+├── config/  
+│   └── paths.py                # 配置文件，定义文件路径和目录  
+├── src/  
+│   └── video_processing.py     # 主要的视频处理逻辑  
+├── uploads/                    # 上传的视频文件存储目录  
+├── outputs/                    # 处理后的文件输出目录  
+│   ├── audio/                  # 提取的音频文件  
+│   ├── subtitles/              # 生成的字幕文件  
+│   ├── frames/                 # 视频帧  
+├── app.py                       # Flask API 服务入口  
+└── requirements.txt            # 项目的依赖列表  
+  
 安装和运行
 
 1. 克隆项目
