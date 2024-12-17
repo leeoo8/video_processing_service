@@ -30,8 +30,8 @@ video_processing_service/
 git clone https://github.com/GeekyWizKid/video_processing_service.git
 cd video_processing_service
 
-2. 创建虚拟环境并安装依赖
-Python 版本 3.9.12
+2. 创建虚拟环境并安装依赖  
+Python 版本 3.9.12  
 建议使用 Python 虚拟环境来隔离项目依赖。
 
 # 创建虚拟环境（可以使用 venv 或 conda）
