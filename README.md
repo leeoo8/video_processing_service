@@ -1,6 +1,4 @@
-为了生成一个合适的项目介绍，你可以根据你的项目的功能、目标和使用方式来进行总结。根据项目名称 video_processing_service，我推测它是一个用于视频处理（如提取音频、生成字幕、嵌入字幕等）的服务。以下是一个基于这些功能的项目介绍模板，适用于 GitHub 项目的 README.md 文件：
-
-Video Processing Service
+# Video Processing Service
 
 Video Processing Service 是一个用于自动化视频处理的服务，支持从视频中提取音频、生成字幕并将字幕嵌入到视频中的功能。该项目利用 FFmpeg 和 Whisper 等开源工具，提供高效、可扩展的处理流程，适用于各种视频和音频处理需求。
 
