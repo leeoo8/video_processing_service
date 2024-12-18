@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Processing Service</title>
+</head>
+<body>
+    <h1>视频处理服务</h1>
+    <form id="uploadForm" enctype="multipart/form-data">
+        <label for="file">选择视频文件：</label>
+        <input type="file" id="file" name="file" accept="video/*" required>
+        <button type="submit">上传并处理</button>
+    </form>
+    <div id="result" style="margin-top: 20px;"></div>
+
+    <script>
+        const form = document.getElementById('uploadForm');
+        const resultDiv = document.getElementById('result');
+
+        form.addEventListener('submit', async (event) => {
+            event.preventDefault();
+            const formData = new FormData();
+            const fileInput = document.getElementById('file');
+            formData.append('file', fileInput.files[0]);
+
+            try {
+                const response = await fetch('/upload', {
+                    method: 'POST',
+                    body: formData,
+                });
+
+                if (!response.ok) {
+                    throw new Error('上传失败，请重试！');
+                }
+
+                const data = await response.json();
+                resultDiv.innerHTML = `
+                    <p>${data.message}</p>
+                    <a href="${data.download_url}" download>下载处理后的视频</a>
+                `;
+            } catch (error) {
+                resultDiv.innerHTML = `<p style="color: red;">${error.message}</p>`;
+            }
+        });
+    </script>
+</body>
+</html>
