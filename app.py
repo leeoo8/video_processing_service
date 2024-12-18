@@ -1,17 +1,21 @@
-from flask import Flask, request, jsonify, send_from_directory
+from flask import Flask, request, jsonify, send_from_directory, render_template
 from flask_cors import CORS
+import os
 
 from config.paths import PathConfig
 from src.video_processing import extract_audio_from_video, generate_subtitles, embed_subtitles
-import os
 
 app = Flask(__name__)
 CORS(app)
 
+@app.route('/')
+def index():
+    return render_template('index.html')  # 渲染主页
 
 @app.route('/test', methods=['GET'])
 def test():
     return jsonify({'message': 'Server is running'})
+
 @app.route('/upload', methods=['POST'])
 def upload_video():
     # 确保相关目录已存在
